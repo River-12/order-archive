@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="sales_order_grid_data_source" xsi:type="string">Riverstone\OrderArchive\Model\ResourceModel\Order\Grid\Collection</item>
+                <item name="orderarchive_archiveorder_listing_data_source" xsi:type="string">Riverstone\OrderArchive\Model\ResourceModel\ArchiveOrder\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Riverstone\OrderArchive\Model\ResourceModel\Order\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">sales_order_grid</argument>
+            <argument name="resourceModel" xsi:type="string">Riverstone\OrderArchive\Model\ResourceModel\Order</argument>
+        </arguments>
+    </type>
+    <virtualType name="Magento\Sales\Model\ResourceModel\Order\Grid" type="Magento\Sales\Model\ResourceModel\Grid">
+        <arguments>
+            <argument name="columns" xsi:type="array">
+                <item name="river_order_archive" xsi:type="string">sales_order.river_order_archive</item>
+            </argument>
+        </arguments>
+    </virtualType>
+</config>

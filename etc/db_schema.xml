@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="sales_order" resource="sales" engine="innodb" comment="Sales Flat Order">
+        <column xsi:type="smallint"  unsigned="true" name="river_order_archive" nullable="false" identity="false" default="0" comment="River Order Archive"/>
+        <column xsi:type="smallint"  unsigned="true" name="river_order_unarchive" nullable="false" identity="false" default="0" comment="River Order Archive"/>
+    </table>
+    <table name="sales_order_grid" resource="sales" engine="innodb" comment="Sales Flat Order Grid">
+        <column xsi:type="smallint"  unsigned="true" name="river_order_archive" nullable="false" identity="false" default="0" comment="River Order Archive"/>
+        <column xsi:type="smallint"  unsigned="true" name="river_order_unarchive" nullable="false" identity="false" default="0" comment="River Order Archive"/>
+    </table>
+</schema>

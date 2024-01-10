@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Riverstone_OrderArchive::manager" title="Riverstone" module="Riverstone_OrderArchive" sortOrder="50" resource="Magento_Backend::content"/>
+        <add id="Riverstone_OrderArchive::archivegrid" title="Archive Manager" module="Riverstone_OrderArchive"      sortOrder="10" parent="Riverstone_OrderArchive::manager"  action="orderarchive/archivegrid/index"     resource="Riverstone_OrderArchive::archivegrid" />
+        <add id="Riverstone_OrderArchive::configuration" title="Configuration" module="Riverstone_OrderArchive" sortOrder="20" action="adminhtml/system_config/edit/section/order_archive" resource="Riverstone_OrderArchive::configuration" parent="Riverstone_OrderArchive::manager"/>
+    </menu>
+</config>

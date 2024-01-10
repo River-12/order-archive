@@ -1,0 +1,43 @@
+<script>
+    require([
+        'jquery',
+        'prototype',
+    ], function(jQuery){
+        jQuery('#<?= $escaper->escapeHtml($block->getHtmlId()) ?>').click(function () {
+            // Set isAjax to true and append form_key in the request.
+            params = {
+                form_key: '<?= $escaper->escapeHtml($block->getFormKey()) ?>',
+                isAjax: true
+            };
+
+            new Ajax.Request('<?=  $escaper->escapeUrl($block->getAjaxArchiveForceUrl()) ?>', {
+                parameters: params,
+                loaderArea: false,
+                asynchronous: true,
+                onCreate: function () {
+                    console.log('qw') ;
+                },
+                onSuccess: function (transport) {
+                    var resultText = '';
+                    if (transport.status > 200) {
+                        resultText = transport.statusText;
+                        alert(resultText);
+                    } else {
+                        var response = JSON.parse(transport.responseText);
+                        resultText = response.message;
+                        alert(resultText);
+                    }
+
+                }
+            });
+        });
+    });
+
+</script>
+<div class="pp-buttons-container">
+    <p>
+        <button class="primary" id="<?= $escaper->escapeHtml($block->getHtmlId()) ?>" type="button">
+            <?=  $escaper->escapeHtml(__('Archive'))?>
+        </button>
+    </p>
+</div>

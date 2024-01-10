@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="order_archive" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Order Archive</label>
+            <tab>riverstoneinfotech</tab>
+            <resource>Riverstone_OrderArchive::order_archive_config</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>General Configuration</label>
+                <field id="enable" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="orders_older_than" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Archive Order Days</label>
+                    <depends>
+                        <field id="*/*/enable">1</field>
+                    </depends>
+                    <comment>Archive Orders Older than</comment>
+                </field>
+                <field id="archive_order_status" translate="label" type="multiselect" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Order Status To Apply</label>
+                    <depends>
+                        <field id="*/*/enable">1</field>
+                    </depends>
+                    <source_model>Magento\Sales\Model\Config\Source\Order\Status</source_model>
+                </field>
+            </group>
+            <group id="schedule" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Schedule Configuration</label>
+                <field id="time" translate="label comment" sortOrder="1" type="time" showInDefault="1" showInWebsite="0"
+                       showInStore="0">
+                    <label>Start Time</label>
+                    <depends>
+                        <field id="*/general/enable">1</field>
+                    </depends>
+                </field>
+                <field id="schedule_for" translate="label" type="select" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Schedule For</label>
+                    <depends>
+                        <field id="*/general/enable">1</field>
+                    </depends>
+                    <source_model>Riverstone\OrderArchive\Model\Config\Source\ScheduleMode</source_model>
+                    <backend_model>Riverstone\OrderArchive\Model\Config\CronConfig</backend_model>
+                </field>               
+                <depends>
+                    <field id="*/general/enable">1</field>
+                </depends>
+            </group>
+            <group id="force_cron" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Force Cron Jobs Configuration</label>
+                <field id="schedule_for_now" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Archive Now</label>
+                    <depends>
+                        <field id="*/general/enable">1</field>
+                    </depends>
+                    <frontend_model>Riverstone\OrderArchive\Block\Adminhtml\AjaxArchiveOrder</frontend_model>
+                </field>
+                <depends>
+                    <field id="*/general/enable">1</field>
+                </depends>
+            </group>
+        </section>
+    </system>
+</config>

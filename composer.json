@@ -1,0 +1,28 @@
+{
+  "name": "riverstone/order-archive",
+  "version": "1.0.0",
+  "description": "The Module allows simplify the management of your sales orders by archiving and organizing them according to your store's specific needs",
+  "type": "magento2-module",
+  "require": {
+      "php": "~5.5.0||~5.6.0||~7.0.0||~7.1.0||~7.2.0||~7.3.0||~7.4.0||~8.1.0||~8.2.0",
+      "magento/framework":"100.0.*|100.1.*|101.0.*|102.0.*",        
+      "riverstone/module-core": "*"
+   },
+  "authors": [
+{
+     "name": "Riverstone Technology Unlimited",
+     "email": "info@riverstonetech.com",
+     "homepage": "https://www.riverstonetech.com",
+     "role": "Technical Support"
+    }
+  ],
+  "license": "MIT",
+  "autoload": {
+"files": [
+     "registration.php"
+],
+      "psr-4": {
+     "Riverstone\\OrderArchive\\": ""
+       }
+  }
+ }
