@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "The Module allows simplify the management of your sales orders by archiving and organizing them according to your store's specific needs",
   "type": "magento2-module",
-  "require": {
-      "php": "~5.5.0||~5.6.0||~7.0.0||~7.1.0||~7.2.0||~7.3.0||~7.4.0||~8.1.0||~8.2.0"
-   },
+   "require": {
+        "magento/framework": "102.*|103.*"
+    },
   "authors": [
 {
      "name": "Riverstone Technology Unlimited",
