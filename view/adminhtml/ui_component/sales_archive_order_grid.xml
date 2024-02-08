@@ -44,11 +44,12 @@
         <paging name="listing_paging"/>
     </listingToolbar>
     <columns name="unarchive_columns">
-        <selectionsColumn name="ids" component="Magento_Sales/js/grid/columns/multiselect">
+        <selectionsColumn name="ids">
             <settings>
                 <indexField>entity_id</indexField>
             </settings>
         </selectionsColumn>
+
         <column name="increment_id">
             <settings>
                 <filter>text</filter>

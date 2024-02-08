@@ -56,7 +56,7 @@ class History extends \Magento\Framework\View\Element\Template
     public function getOrders()
     {
 
-        $customerId = $this->customerSession->getData();
+        $customerId = $this->customerSession->getData('customer_id');
 
         if (!($customerId)) {
             return false;

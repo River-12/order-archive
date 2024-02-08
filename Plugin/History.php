@@ -41,7 +41,7 @@ class History
         \Magento\Sales\Block\Order\History $subject,
         $result
     ) {
-        $customerId = $this->customerSession->getData();
+        $customerId = $this->customerSession->getData('customer_id');
 
         if (!($customerId)) {
             return false;
