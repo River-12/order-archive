@@ -19,6 +19,11 @@ use Magento\Framework\Data\Helper\PostHelper;
  */
 class History extends \Magento\Framework\View\Element\Template
 {
+    protected $customerSession;
+    protected $collectionFactory;
+    protected $helperData;
+    protected $reorder;
+    protected $postHelper;
 
     /**
      * Constructor
@@ -40,12 +45,12 @@ class History extends \Magento\Framework\View\Element\Template
         PostHelper $postHelper,
         array $data
     ) {
-        parent::__construct($context, $data);
         $this->customerSession = $customerSession;
         $this->collectionFactory = $collectionFactory;
         $this->helperData = $helperData;
         $this->postHelper = $postHelper;
         $this->reorder = $reorder;
+        parent::__construct($context, $data);
     }
 
     /**

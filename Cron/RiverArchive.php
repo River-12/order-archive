@@ -10,6 +10,11 @@ use Riverstone\OrderArchive\Helper\Data;
 
 class RiverArchive
 {
+    protected $collectionFactory;
+    protected $resultJsonFactory;
+    protected $archive;
+    protected $logger;
+    protected $helperData;
     /**
      * Constructor
      *

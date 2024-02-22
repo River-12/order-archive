@@ -15,6 +15,10 @@ use Magento\Framework\Controller\ResultFactory;
 
 class RiverArchive extends \Magento\Backend\App\Action implements HttpPostActionInterface
 {
+    protected $filter;
+    protected $collectionFactory;
+    protected $helperData;
+    protected $archive;
   /**
    * Authorization level of a basic admin session
    */

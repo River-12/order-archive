@@ -9,6 +9,8 @@ use Psr\Log\LoggerInterface;
 
 class Archive
 {
+    protected $helperData;
+    protected $logger;
     /**
      * Constructor
      *

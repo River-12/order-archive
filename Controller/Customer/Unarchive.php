@@ -7,6 +7,8 @@ use Riverstone\OrderArchive\Model\OrderArchive\Archive;
 
 class Unarchive extends \Magento\Framework\App\Action\Action
 {
+    protected $order;
+    protected $archive;
     /**
      * @param Context $context
      * @param \Magento\Sales\Api\Data\OrderInterface $order

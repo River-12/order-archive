@@ -8,6 +8,8 @@ use Riverstone\OrderArchive\Helper\Data;
 
 class MassAction extends \Magento\Ui\Component\MassAction
 {
+    protected $authorization;
+    protected $helper;
     /**
      * @param ContextInterface $context
      * @param AuthorizationInterface $authorization

@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
     <system>
-     <tab id="riverstoneinfotech" translate="label" sortOrder="100" class="riverstoneinfotech-logo">
+        <tab id="river_order_archive" translate="label" sortOrder="10">
             <label>Riverstone</label>
         </tab>
         <section id="order_archive" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
             <class>separator-top</class>
             <label>Order Archive</label>
-            <tab>riverstoneinfotech</tab>
+            <tab>river_order_archive</tab>
             <resource>Riverstone_OrderArchive::order_archive_config</resource>
             <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
                 <label>General Configuration</label>
@@ -45,7 +45,7 @@
                         <field id="*/general/enable">1</field>
                     </depends>
                     <source_model>Riverstone\OrderArchive\Model\Config\Source\ScheduleMode</source_model>
-                    <backend_model>Riverstone\OrderArchive\Model\Config\CronConfig</backend_model>
+                    <!-- <backend_model>Riverstone\OrderArchive\Model\Config\CronConfig</backend_model> -->
                 </field>               
                 <depends>
                     <field id="*/general/enable">1</field>
@@ -64,6 +64,6 @@
                     <field id="*/general/enable">1</field>
                 </depends>
             </group>
-        </section>
+        </section> 
     </system>
 </config>

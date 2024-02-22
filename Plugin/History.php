@@ -11,7 +11,11 @@ use Magento\Sales\Model\ResourceModel\Order\CollectionFactory;
  * @SuppressWarnings(PHPMD.UnusedFormalParameter)
  */
 class History
-{
+{ 
+    protected $customerSession;
+    protected $collectionFactory;
+    protected $orderConfig;
+
 
     /**
      * Constructor
@@ -35,7 +39,7 @@ class History
      *
      * @param \Magento\Sales\Block\Order\History $subject
      * @param array|mixed $result
-     * @return false|Collection
+     *  @return bool|\Magento\Sales\Model\ResourceModel\Order\Collection
      */
     public function aroundGetOrders(
         \Magento\Sales\Block\Order\History $subject,
@@ -46,7 +50,7 @@ class History
         if (!($customerId)) {
             return false;
         }
-        $this->orders = $this->collectionFactory->create($customerId)->addFieldToSelect(
+        $orders = $this->collectionFactory->create($customerId)->addFieldToSelect(
             '*'
         )->addFieldToFilter(
             'status',
@@ -58,6 +62,6 @@ class History
             'created_at',
             'desc'
         );
-        return $this->orders;
+        return $orders;
     }
 }

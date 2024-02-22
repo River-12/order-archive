@@ -16,6 +16,9 @@ use Magento\Backend\App\Action\Context;
  */
 class Force extends \Magento\Backend\App\Action implements HttpPostActionInterface
 {
+    protected $collectionFactory;
+    protected $resultJsonFactory;
+    protected $archive;
 
     /**
      * Constructor

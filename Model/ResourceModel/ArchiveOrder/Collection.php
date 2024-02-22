@@ -12,6 +12,11 @@ use Magento\Framework\Model\ResourceModel\Db\AbstractDb;
 
 class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection
 {
+    protected $entityFactory;
+    protected $logger;
+    protected $fetchStrategy;
+    protected $eventManager;
+    protected $storeManager;
 
     /**
      * Constructor
