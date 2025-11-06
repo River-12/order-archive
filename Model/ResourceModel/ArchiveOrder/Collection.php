@@ -54,8 +54,8 @@ class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\Ab
         FetchStrategyInterface $fetchStrategy,
         ManagerInterface $eventManager,
         StoreManagerInterface $storeManager,
-        AdapterInterface $connection = null,
-        AbstractDb $resource = null
+        ?AdapterInterface $connection = null,
+        ?AbstractDb $resource = null
     ) {
         $this->_logger = $logger;
         $this->_init(ArchiveOrder::class, ArchiveOrder::class);
