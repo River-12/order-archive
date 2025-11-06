@@ -1,6 +1,6 @@
 {
   "name": "riverstone/order-archive",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "The Module allows simplify the management of your sales orders by archiving and organizing them according to your store's specific needs",
   "type": "magento2-module",
    "require": {

@@ -11,11 +11,21 @@ use Magento\Sales\Model\ResourceModel\Order\CollectionFactory;
  * @SuppressWarnings(PHPMD.UnusedFormalParameter)
  */
 class History
-{ 
+{
+    /**
+     * @var Session
+     */
     protected $customerSession;
-    protected $collectionFactory;
-    protected $orderConfig;
 
+    /**
+     * @var CollectionFactory
+     */
+    protected $collectionFactory;
+
+    /**
+     * @var Config
+     */
+    protected $orderConfig;
 
     /**
      * Constructor
@@ -39,7 +49,7 @@ class History
      *
      * @param \Magento\Sales\Block\Order\History $subject
      * @param array|mixed $result
-     *  @return bool|\Magento\Sales\Model\ResourceModel\Order\Collection
+     * @return bool|\Magento\Sales\Model\ResourceModel\Order\Collection
      */
     public function aroundGetOrders(
         \Magento\Sales\Block\Order\History $subject,

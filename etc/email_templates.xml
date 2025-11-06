@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/email_templates.xsd">
+
+    <template id="order_archive_notification_template"
+              label="Order Archive Notification"
+              file="order_archive_notification_template.html"
+              type="html"
+              module="Riverstone_OrderArchive"
+              area="adminhtml"/>
+
+      <template id="order_unarchive_notification_template"
+              label="Order Archive Notification"
+              file="order_unarchive_notification_template.html"
+              type="html"
+              module="Riverstone_OrderArchive"
+              area="frontend"/>          
+              
+</config>
+

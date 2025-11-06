@@ -64,6 +64,35 @@
                     <field id="*/general/enable">1</field>
                 </depends>
             </group>
+             <!-- New Email Notification Settings Group -->
+            <group id="email_notification" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Email Notification Configuration For Archiving Order</label>
+
+                <field id="notify_after_archiving" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Notify After Archiving</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="send_to_email" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Send To E-mail Address</label>
+                    <comment>Enter the email address where notifications will be sent.</comment>
+                </field>
+            </group>
+
+            <!-- New Email Notification Settings Group for Unarchiving Orders -->
+            <group id="email_notification_unarchiving" translate="label" type="text" sortOrder="21" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Email Notification Configuration For Unarchiving Order</label>
+
+                <field id="notify_after_unarchiving" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Notify After Unarchiving</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="send_to_email_unarchiving" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Send To E-mail Address</label>
+                    <comment>Enter the email address where notifications for unarchiving will be sent.</comment>
+                </field>
+            </group>
         </section> 
     </system>
 </config>

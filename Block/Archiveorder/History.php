@@ -19,10 +19,29 @@ use Magento\Framework\Data\Helper\PostHelper;
  */
 class History extends \Magento\Framework\View\Element\Template
 {
+    /**
+     * @var Session
+     */
     protected $customerSession;
+
+    /**
+     * @var CollectionFactory
+     */
     protected $collectionFactory;
+
+    /**
+     * @var Data
+     */
     protected $helperData;
+
+    /**
+     * @var Reorder
+     */
     protected $reorder;
+
+    /**
+     * @var PostHelper
+     */
     protected $postHelper;
 
     /**

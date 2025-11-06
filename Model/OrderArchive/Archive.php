@@ -9,7 +9,14 @@ use Psr\Log\LoggerInterface;
 
 class Archive
 {
+    /**
+     * @var Data
+     */
     protected $helperData;
+
+    /**
+     * @var LoggerInterface
+     */
     protected $logger;
     /**
      * Constructor

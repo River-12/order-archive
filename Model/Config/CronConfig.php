@@ -29,9 +29,21 @@ class CronConfig extends \Magento\Framework\App\Config\Value
      * @var mixed|string
      */
     protected $runModelPath = '';
+
+    /**
+     * @var Registry
+     */
     protected $registry;
-    protected  $config;
-    protected  $cacheTypeList;
+
+    /**
+     * @var ScopeConfigInterface
+     */
+    protected $config;
+
+    /**
+     * @var TypeListInterface
+     */
+    protected $cacheTypeList;
 
     /**
      * Constructor

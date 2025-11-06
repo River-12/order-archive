@@ -12,7 +12,11 @@ use Magento\Framework\View\Result\PageFactory;
  */
 class Index extends \Magento\Backend\App\Action
 {
-        protected $resultPageFactory;
+    /**
+     * @var PageFactory
+     */
+    protected $resultPageFactory;
+
     /**
      * Constructor
      *
